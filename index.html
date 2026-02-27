@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CURSED CAMERA</title>
+    <header>the strange camaera beckons you</header>
+    <style>
+        body {
+            color: #111;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        #layout {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 100%;
+            flex-wrap: nowrap;
+        }
+
+        #poem {
+            text-align: left;
+            flex-shrink: 0;
+            width: 200px;
+            font-size: 12px;
+            line-height: 2.4;
+            color: #111;
+        }
+
+        #poem .option {
+            color: #111;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 2px 4px;
+        }
+
+        #ascii-output {
+            white-space: pre;
+            line-height: 0.7;
+            font-size: 6px;
+            text-align: left;
+            width: 1400px;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="background">
+    <section id="layout">
+        <section id="poem">
+
+            <article class="line">
+                <span class="imgTrigger" data-image="start">
+                    the CAMERA holds itself breathing
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="start">
+                    shutter <span class="option" data-distortion="noiseSurge">SNAPS</span> holding dust in suspension
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene1">
+                    stolen <span class="option" data-distortion="scanlineTear">LIGHT</span> washes the earth
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene2">
+                    <span class="option" data-distortion="scanlineTear">DARKNESS</span> seeps back in
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene2">
+                    a frame appears
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene3">
+                    stealing its <span class="option" data-distortion="scanlineTear">SUBJECT</span>
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene3">
+                    surroundings subside
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene3">
+                    art takes form
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene3">
+                    the subject <span class="option" data-distortion="pulseBloom">CONTORTS</span>
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene4">
+                    a new frame takes <span class="option" data-distortion="pulseBloom">FORM</span>
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene4">
+                    instances of <span class="option" data-distortion="rainFall">DISTORTION</span> fade
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene4">
+                    eyes close
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene4">
+                    <span class="option" data-distortion="rainFall">REOPEN</span>
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene4">
+                    looking up from the <span class="option" data-distortion="rainFall">FRAME</span>
+                </span>
+            </article>
+
+            <article class="line">
+                <span class="imgTrigger" data-image="scene4">
+                    positions swapped
+                </span>
+            </article>
+
+        </section>
+        <pre id="ascii-output"></pre>
+    </section>
+    <canvas id="canvas"></canvas>
+
+    <script src="asciiengine.js"></script>
+</body>
+
+<svg>
+    <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.45" numOctaves="99" stitchTiles="stitch" />
+</svg>
+
+</html>
